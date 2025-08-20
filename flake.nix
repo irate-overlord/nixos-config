@@ -14,6 +14,8 @@
         { nix.settings.experimental-features = ["nix-command" "flakes"]; }
         ./configuration.nix
         ./modules/common-tools.nix
+        ./modules/user-software.nix
+        ./modules/secrets.nix
         
         # Enable ZFS
         {

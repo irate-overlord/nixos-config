@@ -8,5 +8,10 @@
     htop
     unzip
     tree
+    tailscale
   ];
+
+  # Enable Tailscale service system-wide
+  services.tailscale.enable = true;
+
 }
