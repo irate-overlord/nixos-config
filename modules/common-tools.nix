@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   environment.systemPackages = with pkgs; [
     git
@@ -11,12 +11,15 @@
     tailscale
   ];
 
+  # Enable Flatpak
+  services.flatpak.enable = true;
+
   # Enable Tailscale service system-wide
   services.tailscale.enable = true;
 
   # Pass the secret to the systemd service
   systemd.services.tailscaled.serviceConfig = {
-    Environment = "TS_AUTHKEY=${tailscaleAuthKey}";
+    Environment = "TS_AUTHKEY=${config.mySecrets.tailscaleAuthKey}";
   };
 
 }
