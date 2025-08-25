@@ -1,14 +1,15 @@
 { pkgs, config, ... }:
 {
   environment.systemPackages = with pkgs; [
-    git
-    vim
     curl
-    wget
+    git
+    gparted
     htop
-    unzip
     tree
     tailscale
+    unzip
+    vim
+    wget
   ];
 
   # Enable Flatpak

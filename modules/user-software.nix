@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     brave
     discord
+    freefilesync
   ];
 
   # Steam full setup (32-bit libs + runtime)

@@ -11,8 +11,21 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
+
+  # Bootloader
+  boot.loader.systemd-boot.enable = false;
+
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    devices = [ "nodev" ];       # empty list → UEFI mode
+    useOSProber = true;
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
+
 
   # Use latest kernel.
   # boot.kernelPackages = pkgs.linuxPackages_latest; # commenting out for now due to ZFS
